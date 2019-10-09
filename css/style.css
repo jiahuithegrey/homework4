@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+header{
+    margin-bottom: 40px;
+}
+.main{
+    width: 60%;
+    margin: 60px auto;
+    text-align: center;
+}
+p{
+    font-size: 24px;
+    line-height: 28px;
+}
+#highScores{
+    float: left;
+    margin-top:0;
+}
+#timer{
+    float: right;
+}
+button{
+    color: white;
+    background-color: #9C012B;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}

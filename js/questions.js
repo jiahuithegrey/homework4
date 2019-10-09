@@ -25,7 +25,19 @@ var questions = [
         answer: "142"
     }
   ];
-  
+  var score = 0;
+  var titleEl = document.getElementById("title");
+  titleEl = questions[i].title;
+  for (i=0;i<question.length;i++){
+    var response = window.prompt(questions[i].title);
+    if (response == questions[i].answer){
+        score++;
+        alert("Correct!");
+    }else{
+        alert("wrong!");
+    }
+  }
+
   
   * The length of the array in `questions.js` determines the length of play. 
   Fifteen seconds per question is a good estimate, so 5 questions will result in a length of play of 75 seconds.
