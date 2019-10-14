@@ -24,21 +24,67 @@ var questions = [
         choices: ["218", "96", "312", "142"],
         answer: "142"
     }
-  ];
-  var score = 0;
-  var titleEl = document.getElementById("title");
-  titleEl = questions[i].title;
-  for (i=0;i<question.length;i++){
-    var response = window.prompt(questions[i].title);
-    if (response == questions[i].answer){
-        score++;
-        alert("Correct!");
-    }else{
-        alert("wrong!");
-    }
-  }
+];
+// As soon as the question starts, timer begins
+var timeInterval = setTime();
 
-  
-  * The length of the array in `questions.js` determines the length of play. 
-  Fifteen seconds per question is a good estimate, so 5 questions will result in a length of play of 75 seconds.
-  
+var questionEl = document.querySelector("#question");
+var choiceTextEl = document.querySelectorAll(".choice-text");
+var buttonEl = document.querySelectorAll(".choice-text");
+
+var score = 0;
+var qIndex = 0;
+
+var alertEl = document.querySelector("#alert");
+
+function nextQuestion(){
+    questionEl.textContent = questions[qIndex].title;
+
+    for (var i=0; i<questions[qIndex].choices.length; i++){
+        choiceTextEl[i].textContent = questions[qIndex].choices[i]; 
+
+        buttonEl[i].addEventListener("click", function(event){
+            var userChoice = event.target.textContent;
+            if (userChoice === questions[qIndex].answer){
+                // alert("right");
+                alertEl.textContent = "Correct!";
+                score+=10;
+            }else{
+                // alert("wrong");
+                alertEl.textContent = "Wrong!";
+                // secondsLeft = secondsLeft-15;
+            }
+    
+            if (qIndex<questions.length){
+            qIndex++;
+            }else{
+                clearInterval(timerInterval);
+                alert("Game Over! Your total score is " + score);
+            }
+            arrayQues.innerHTML ="";
+            return nextQuestion();
+        })
+    }
+}
+    nextQuestion();
+
+    var timerEl = document.querySelector("#timer");
+    var secondsLeft=75;
+
+    function setTime(){
+        var timeInterval = setInterval(function(){
+            secondsLeft--;
+            timeEl.textContent=secondsLeft;
+
+            if(secondsLeft ===0){
+                clearInterval(timerInterval);
+                sendMessage();
+            }
+        }, 1000);
+            return timeInterval;
+    }
+
+    function sendMessage(){
+    timeEl.textContent = "Time's Up!";
+    }
+    

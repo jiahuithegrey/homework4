@@ -2,18 +2,29 @@
     margin: 0;
     padding: 0;
     border:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+body{
+    background-image: url("../image/papertexture.jpg");
 }
 header{
     margin-bottom: 40px;
 }
-.main{
+.container{
     width: 60%;
     margin: 60px auto;
     text-align: center;
 }
+h1{
+    color: #9C012B;
+    margin-bottom: 10px;
+}
 p{
     font-size: 24px;
     line-height: 28px;
+    color: #9C012B;
 }
 #highScores{
     float: left;
@@ -23,9 +34,38 @@ p{
     float: right;
 }
 button{
-    color: white;
-    background-color: #9C012B;
-    padding: 10px 15px;
-    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #9C012B;
+    border: 0.5px solid #9C012B;
+    padding: 8px 40px;
     margin-top: 20px;
+}
+#question{
+    margin-bottom: 20px;
+}
+.class{
+    float:left;
+}
+/*.choice-container:hover, button:hover{
+    cursor: pointer;
+    box-shadow: 0px 2px 3px 0 #b22349;
+    transform: translateY(-0.1rem);
+    transform: 150ms;
+} 
+.choice-container{
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 18px;
+    background-color: white;
+}
+.choice-prefix{
+    color: white;
+    padding: 10px 17px;
+    background-color: #9C012B;
+}
+.choice-text{
+    padding: 10px;
+
 }
