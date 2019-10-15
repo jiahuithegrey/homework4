@@ -4,22 +4,32 @@
     <meta charset="UTF-8"/>
     <title>Harry Potter Trivia</title>
     <link rel="shortcut icon" type="image/png" href="image/harry.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   </head>
   <body>
-    <header>
-      <h5 id="highScores"> View Highscores </h5>
-      <h5 id="timer"> Time: </h5>
-    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <h6 id="highScores"> View Highscores </h6>
+        </div>
+        <div class=col-sm-7>
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <h6 id="time">Time: <span id="timer-number"></span></h6>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <h1>Harry Potter Trivia Challenge</h1>
       <p>Try to answer the following Harry Potter Trivia questions within the time limit.
           Keep in mind that incorrect answers will penalize your scoretime by 10 seconds!
       </p>
-      <a href="trivia.html"><button>Start Trivia</button></a>
+      <a href="trivia.html"><button id="startTrivia">Start Trivia</button></a>
     </div>
-
+    <script src="js/questions.js"></script>
     
   </body>
 </html>

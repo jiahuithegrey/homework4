@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Harry Potter Trivia</title>
     <link rel="shortcut icon" type="image/png" href="image/harry.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" />
     <meta
       name="viewport"
@@ -11,18 +12,27 @@
     />
   </head>
   <body>
-    <header>
-      <h5 id="highScores">View Highscores</h5>
-      <h5 id="timer">Time: 0</h5>
-    </header>
+      <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-3">
+              <h6 id="highScores"> View Highscores </h6>
+            </div>
+            <div class=col-sm-7>
+            </div>
+            <div class="col-xs-12 col-sm-2">
+              <h6 id="time">Time: <span id="timer-number"></span></h6>
+            </div>
+          </div>
+        </div>
 
     <div class="container">
       <h1 id="All done!"></h1>
-      <h2>Your final score is</h2>
-      <h2>Enter Initials: </h2>
-      <button id="submitBtn">Submit</button>
+      <h2>Your final score is <span id="finalScore"></span>.</h2>
+      <form>
+        Enter Initials: <input type="text" placeholder="JW"><br>
+        <input id="submit" type="submit" value="Submit">
+      </form>
       
-    
     <script src="js/questions.js"></script>
   </body>
 </html>
